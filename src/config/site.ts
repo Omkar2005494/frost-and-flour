@@ -15,8 +15,8 @@ export const siteConfig = {
     whatsappMessage: "Hi Frost & Flour! 👋 I'd like to place a cake order.",
   },
   stats: [
-    { label: "Happy Customers", value: "500+" },
-    { label: "Custom Cakes", value: "150+" },
+    { label: "Happy Customers", value: "200+" },
+    { label: "Custom Cakes", value: "70+" },
     { label: "Customer Rating", value: "5★" },
     { label: "Handmade", value: "100%" },
   ],
