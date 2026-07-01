@@ -1,9 +1,62 @@
 "use client";
 
-import React from "react";
-import { motion, Variants } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { featuredCollections } from "@/config/data";
+
+const AnimatedCollectionCard = ({ col, idx, variants }: { col: any, idx: number, variants: Variants }) => {
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  useEffect(() => {
+    if (!col.images || col.images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentImageIdx((prev) => (prev + 1) % col.images.length);
+    }, 3500); // Crossfade every 3.5s
+    
+    return () => clearInterval(interval);
+  }, [col.images]);
+
+  return (
+    <motion.div
+      variants={variants}
+      className={`relative overflow-hidden rounded-[16px] group cursor-pointer aspect-square ${
+        idx === 2 || idx === 3 ? "lg:col-span-2 lg:aspect-[2/1]" : ""
+      }`}
+    >
+      {/* Background images with crossfade */}
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={currentImageIdx}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2 }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <PlaceholderImage 
+            src={col.images ? col.images[currentImageIdx] : col.image} 
+            label={col.title} 
+            className="w-full h-full object-cover transition-all duration-[4000ms] ease-out group-hover:scale-110 group-hover:brightness-110 scale-105" 
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500 group-hover:opacity-90 z-10" />
+      <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full flex flex-col justify-end z-20">
+        <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 className="text-white font-heading text-2xl md:text-3xl font-bold mb-2">
+            {col.title}
+          </h3>
+          <p className="text-white/80 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
+            {col.description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 export function FeaturedCollections() {
   const container: Variants = {
@@ -43,26 +96,7 @@ export function FeaturedCollections() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {featuredCollections.map((col, idx) => (
-            <motion.div
-              key={col.id}
-              variants={item}
-              className={`relative overflow-hidden rounded-[16px] group cursor-pointer aspect-square ${
-                idx === 2 || idx === 3 ? "lg:col-span-2 lg:aspect-[2/1]" : ""
-              }`}
-            >
-              <PlaceholderImage src={col.image} label={col.title} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:brightness-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
-              <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full flex flex-col justify-end">
-                <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                  <h3 className="text-white font-heading text-2xl md:text-3xl font-bold mb-2">
-                    {col.title}
-                  </h3>
-                  <p className="text-white/80 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
-                    {col.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            <AnimatedCollectionCard key={col.id} col={col} idx={idx} variants={item} />
           ))}
         </motion.div>
       </div>

@@ -55,12 +55,72 @@ export const signatureCreations = [
   },
 ];
 
+import bday1 from "../../public/images/collections/birthday/1.png";
+import bday2 from "../../public/images/collections/birthday/2.jpg";
+import bday3 from "../../public/images/collections/birthday/3.jpg";
+import bday4 from "../../public/images/collections/birthday/4.jpg";
+import bday5 from "../../public/images/collections/birthday/5.jpg";
+
+import anniv1 from "../../public/images/collections/anniversary/1.jpg";
+import anniv2 from "../../public/images/collections/anniversary/2.jpg";
+import anniv3 from "../../public/images/collections/anniversary/3.jpg";
+import anniv4 from "../../public/images/collections/anniversary/4.jpg";
+import anniv5 from "../../public/images/collections/anniversary/5.jpg";
+
+import wed1 from "../../public/images/collections/wedding/1.jpg";
+import wed2 from "../../public/images/collections/wedding/2.jpg";
+import wed3 from "../../public/images/collections/wedding/3.jpg";
+import wed4 from "../../public/images/collections/wedding/4.png";
+import wed5 from "../../public/images/collections/wedding/5.jpg";
+
+import bento1 from "../../public/images/collections/bento/1.jpg";
+import bento2 from "../../public/images/collections/bento/2.png";
+import bento3 from "../../public/images/collections/bento/3.jpg";
+import bento4 from "../../public/images/collections/bento/4.png";
+import bento5 from "../../public/images/collections/bento/5.png";
+
+import custom1 from "../../public/images/collections/custom/1.png";
+import custom2 from "../../public/images/collections/custom/2.jpg";
+import custom3 from "../../public/images/collections/custom/3.jpg";
+import custom4 from "../../public/images/collections/custom/4.jpg";
+import custom5 from "../../public/images/collections/custom/5.png";
+
 export const featuredCollections = [
-  { id: "birthday", title: "Birthday Cakes", image: signature4, description: "Make every year unforgettable with our signature birthday creations." },
-  { id: "anniversary", title: "Anniversary Cakes", image: signature2, description: "Celebrate your milestone with an elegant and romantic centerpiece." },
-  { id: "wedding", title: "Wedding Cakes", image: signature1, description: "Bespoke tiered cakes designed to match your dream wedding." },
-  { id: "bento", title: "Bento Cakes", image: signature3, description: "Perfectly portioned mini cakes for intimate celebrations." },
-  { id: "custom", title: "Custom Cakes", image: signature5, description: "Bring your unique vision to life with our completely custom designs." },
+  { 
+    id: "birthday", 
+    title: "Birthday Cakes", 
+    image: signature4, 
+    images: [signature4, bday1, bday2, bday3, bday4, bday5],
+    description: "Make every year unforgettable with our signature birthday creations." 
+  },
+  { 
+    id: "anniversary", 
+    title: "Anniversary Cakes", 
+    image: signature2, 
+    images: [signature2, anniv1, anniv2, anniv3, anniv4, anniv5],
+    description: "Celebrate your milestone with an elegant and romantic centerpiece." 
+  },
+  { 
+    id: "wedding", 
+    title: "Wedding Cakes", 
+    image: signature1, 
+    images: [signature1, wed1, wed2, wed3, wed4, wed5],
+    description: "Bespoke tiered cakes designed to match your dream wedding." 
+  },
+  { 
+    id: "bento", 
+    title: "Bento Cakes", 
+    image: signature3, 
+    images: [signature3, bento1, bento2, bento3, bento4, bento5],
+    description: "Perfectly portioned mini cakes for intimate celebrations." 
+  },
+  { 
+    id: "custom", 
+    title: "Custom Cakes", 
+    image: signature5, 
+    images: [signature5, custom1, custom2, custom3, custom4, custom5],
+    description: "Bring your unique vision to life with our completely custom designs." 
+  },
 ];
 
 import t1 from "../../public/images/testimonials/1.png";
