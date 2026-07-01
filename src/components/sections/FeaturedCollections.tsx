@@ -5,7 +5,6 @@ import { motion, Variants, AnimatePresence } from "framer-motion";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { featuredCollections } from "@/config/data";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const AnimatedCollectionCard = ({ col, idx, variants }: { col: any, idx: number, variants: Variants }) => {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
@@ -67,23 +66,21 @@ const AnimatedCollectionCard = ({ col, idx, variants }: { col: any, idx: number,
             <DialogTitle className="text-3xl font-heading">{col.title}</DialogTitle>
             <DialogDescription className="text-base text-muted-foreground">{col.description}</DialogDescription>
           </DialogHeader>
-          <div className="relative px-8">
+          <div className="relative max-h-[60vh] overflow-y-auto pr-2 -mr-2">
             {col.images && col.images.length > 0 ? (
-              <Carousel className="w-full" opts={{ loop: true }}>
-                <CarouselContent>
-                  {col.images.map((img: any, i: number) => (
-                    <CarouselItem key={i}>
-                      <div className="relative w-full aspect-square md:aspect-[16/10] rounded-2xl overflow-hidden">
-                        <PlaceholderImage src={img} label={`${col.title} ${i + 1}`} className="object-cover" />
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="-left-4 bg-background shadow-md border-border text-foreground hover:bg-muted" />
-                <CarouselNext className="-right-4 bg-background shadow-md border-border text-foreground hover:bg-muted" />
-              </Carousel>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {col.images.map((img: any, i: number) => (
+                  <div key={i} className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-md">
+                    <PlaceholderImage 
+                      src={img} 
+                      label={`${col.title} ${i + 1}`} 
+                      className="object-cover w-full h-full transition-transform duration-700 hover:scale-110" 
+                    />
+                  </div>
+                ))}
+              </div>
             ) : (
-              <div className="relative w-full aspect-square md:aspect-[16/10] rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md">
                 <PlaceholderImage src={col.image} label={col.title} className="object-cover" />
               </div>
             )}
