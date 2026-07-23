@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍰 Frost & Flour
 
-## Getting Started
+A modern, elegant, and mobile-first website for **Frost & Flour**, a home bakery specializing in handcrafted custom cakes.
 
-First, run the development server:
+🌐 Live Website: https://frost-and-flour-alpha.vercel.app/
+
+---
+
+## ✨ Features
+
+- 🎂 Beautiful Hero Section
+- 📖 About Frost & Flour
+- 🍰 Featured Cake Collections
+- 🖼️ Interactive Collection Gallery
+- ❤️ Customer Love Section
+- 📱 Fully Responsive Design
+- 💬 Direct WhatsApp Ordering
+- 🎨 Premium & Minimal UI
+- ⚡ Fast Loading & Optimized Performance
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vercel
+
+---
+
+## 📂 Sections
+
+- Home
+- About
+- Collections
+- Customer Love
+- Contact
+- WhatsApp Ordering
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/Omkar2005494/frost-and-flour.git
+```
+
+Go to the project folder
+
+```bash
+cd frost-and-flour
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📸 Highlights
 
-To learn more about Next.js, take a look at the following resources:
+- Elegant cake showcase
+- Scrollable collection galleries
+- Customer testimonials
+- Mobile-first experience
+- Premium animations
+- WhatsApp ordering integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 Contact
 
-## Deploy on Vercel
+📍 Gadag, Karnataka
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📞 WhatsApp: +91 80882 14994
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Instagram:
+https://www.instagram.com/frostandflour.luv/
+
+Website:
+https://frost-and-flour-alpha.vercel.app/
+
+---
+
+## ❤️ Made with Love
+
+Designed and developed with ❤️ for **Frost & Flour** to create a premium online experience for cake lovers.
